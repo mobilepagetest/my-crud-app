@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 
 import { WebScanResult } from "../web-scan-result";
 import {PagespeedService} from "../pagespeed.service";
@@ -10,15 +11,25 @@ import {PagespeedService} from "../pagespeed.service";
 })
 export class IndexComponent implements OnInit {
 
+  title = 'Angular Form Validation Tutorial';
+  angForm: FormGroup | undefined;
   webScanResult: WebScanResult | undefined;
 
-  constructor( public pagespeedService : PagespeedService) { }
+  constructor( public pagespeedService : PagespeedService, private fb: FormBuilder) {
+    this.createForm();
+  }
 
   ngOnInit(): void {
     this.pagespeedService.scan().subscribe((data: WebScanResult ) => {
       this.webScanResult = data;
       console.log(this.webScanResult);
       })
+  }
+
+  createForm() {
+    this.angForm = this.fb.group({
+      name: ['', Validators.required ]
+    });
   }
 
 }

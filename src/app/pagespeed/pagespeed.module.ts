@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { PagespeedRoutingModule } from './pagespeed-routing.module';
 import { IndexComponent } from './index/index.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { IndexComponent } from './index/index.component';
   ],
   imports: [
     CommonModule,
-    PagespeedRoutingModule
+    PagespeedRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class PagespeedModule { }
