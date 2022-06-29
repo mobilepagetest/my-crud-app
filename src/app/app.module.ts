@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { PostModule } from './post/post.module';
 import { PagespeedModule} from "./pagespeed/pagespeed.module";
 
+import { FruitsModule} from "./fruits/fruits.module";
+
 @NgModule({
   declarations: [
     AppComponent
@@ -19,7 +21,8 @@ import { PagespeedModule} from "./pagespeed/pagespeed.module";
     PostModule,
     PagespeedModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FruitsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
