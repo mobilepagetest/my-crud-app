@@ -1,0 +1,23 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="col">Id</th>
+        <th class="col">Name</th>
+        <th class="col">Quantity</th>
+        <th class="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of allFruits">
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.name}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.price}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+{{allFruits.length}}
