@@ -22,6 +22,12 @@
       "name": "Mango",
       "quantity": 10,
       "price": 350
+    },
+    {
+      "id": 2,
+      "name": "Sapota",
+      "price": 120,
+      "quantity": 3
     }
   ]
 }
