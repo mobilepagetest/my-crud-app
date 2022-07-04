@@ -19,6 +19,9 @@
         <td>{{item.name}}</td>
         <td>{{item.quantity}}</td>
         <td>{{item.price}}</td>
+        <td>
+          <a class="btn btn-primary" [routerLink]="['/fruits/edit', item.id]">Edit</a>
+        </td>
       </tr>
     </tbody>
   </table>

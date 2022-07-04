@@ -10,6 +10,9 @@ import {FruitsService} from "../fruits.service";
 export class HomeComponent implements OnInit {
 
   allFruits : Fruits[] = [];
+  deleteModal: any;
+  idToDelete: number = 0;
+
   constructor(private fruitService : FruitsService) { }
 
   ngOnInit(): void {
@@ -21,5 +24,11 @@ export class HomeComponent implements OnInit {
       this.allFruits = data;
     })
   }
+
+  openDeleteModal(id: number) {
+    this.idToDelete = id;
+    this.deleteModal.show();
+  }
+
 
 }

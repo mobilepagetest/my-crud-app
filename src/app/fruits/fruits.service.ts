@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient} from "@angular/common/http";
 import {Fruits} from "./fruits";
 
+const baseUrl = 'http://localhost:3000/fruits';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -18,10 +20,14 @@ export class FruitsService {
   }
 
   getById(id :number) {
-    return this.http.get<Fruits>('http://localhost:3000/fruits/$:{id}');
+    return this.http.get<Fruits>(`${baseUrl}/${id}`);
   }
 
   update(payload : Fruits) {
-    return this.http.put<Fruits>('http://localhost:3000/fruits/$:{payload.id}',payload);
+    return this.http.put<Fruits>(`http://localhost:3000/fruits/${payload.id}`,payload);
+  }
+
+  delete(id :number) {
+    return this.http.delete<Fruits>(`${baseUrl}/${id}`);
   }
 }
