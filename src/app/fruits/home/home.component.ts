@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
 
   allFruits : Fruits[] = [];
   deleteModal: any;
-  idToDelete: number = 0;
+  idTodelete: number = 0;
 
   constructor(private fruitService : FruitsService) { }
 
@@ -26,8 +26,17 @@ export class HomeComponent implements OnInit {
   }
 
   openDeleteModal(id: number) {
-    this.idToDelete = id;
+    this.idTodelete = id;
     this.deleteModal.show();
+  }
+
+  delete() {
+    this.fruitService.delete(this.idTodelete).subscribe({
+      next: (data) => {
+        this.allFruits = this.allFruits.filter(_ => _.id != this.idTodelete)
+        this.deleteModal.hide();
+      },
+    });
   }
 
 
